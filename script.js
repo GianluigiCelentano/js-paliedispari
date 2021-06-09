@@ -7,3 +7,19 @@ if (palindrome(checkName)) {
 } else {
     document.getElementById("palindrome").innerHTML += "Il tuo nome non è palindromo"
 }
+
+
+var sum = 0
+var oddOrEven = prompt("PARI O DISPARI?")
+var utentNumber = prompt("scrivi il tuo numero da 1 a 5")
+function randomNum(random) {
+    var randomNum = Math.floor(Math.random() * 5)
+    return randomNum
+}
+    sum = parseInt(utentNumber) + randomNum
+
+if (sum % 2 === 0 && parseInt(utentNumber) % 2 === 0) {
+    document.getElementById("winner").innerHTML += "Vince l'utente" + randomNum
+} else {
+    document.getElementById("winner").innerHTML += "Vince il computer" + randomNum
+}
