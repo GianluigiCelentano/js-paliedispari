@@ -16,10 +16,10 @@ function randomNum() {
     var randomNum = Math.floor(Math.random() * 5)
     return randomNum
 }
-    sum = parseInt(utentNumber) + randomNum
+sum = parseInt(utentNumber) + randomNum
 
 if (sum % 2 === 0 && parseInt(utentNumber) % 2 === 0) {
-    document.getElementById("winner").innerHTML += "Vince l'utente" + " " + randomNum(sum)
+    document.getElementById("winner").innerHTML += "PARI" + " " + randomNum(sum)
 } else {
-    document.getElementById("winner").innerHTML += "Vince il computer"+ " " + randomNum(sum)
+    document.getElementById("winner").innerHTML += "DISPARI"+ " " + randomNum(sum)
 }
