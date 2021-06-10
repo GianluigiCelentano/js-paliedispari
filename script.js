@@ -8,18 +8,42 @@ if (palindrome(checkName)) {
     document.getElementById("palindrome").innerHTML += "Il tuo nome non è palindromo"
 }
 
+// -----------------------------------------------------PARI O DISPARI
 
-var oddOrEven = prompt("PARI O DISPARI?")
-var utentNumber = parseInt(prompt("scrivi il tuo numero da 1 a 5"))
-function randomNum() {
-    var randomNum = Math.floor(Math.random() * 5)
-    return randomNum
+var oddOrEven = prompt("PARI O DISPARI?").toLowerCase()
+
+while (oddOrEven !== "pari" && oddOrEven !== "dispari") {
+    alert("ATTENZIONE!! INSERISCI O PARI O DISPARI")
+    oddOrEven = prompt("PARI O DISPARI?").toLowerCase()
 }
 
-var randomNum = utentNumber + randomNum
+var utentNumber = parseInt(prompt("scrivi il tuo numero da 1 a 5"))
 
-if (sum % 2 === 0 && sum === utentNumber) {
-    document.getElementById("winner").innerHTML += "PARI" + " " + randomNum
+while (utentNumber < 1 || utentNumber > 5 ) {
+    alert("ATTENZIONE!! INSERISCI UN NUMERO DA 1 A 5")
+    utentNumber = prompt("scrivi il tuo numero da 1 a 5")
+}
+
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max - min +1)) + min
+}
+
+function isPari (num) {
+    if (num % 2 === 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+var numberComputer = randomNum(1, 5)
+
+var total = utentNumber + numberComputer
+
+if ((isPari(total) === true && oddOrEven === "pari") 
+    || 
+(isPari(total) === false && oddOrEven === "dispari") ) {
+    document.getElementById("winner").innerHTML = total + " " + "HAI VINTO"
 } else {
-    document.getElementById("winner").innerHTML += "DISPARI"+ " " + randomNum
+    document.getElementById("winner").innerHTML = total + " " + "HAI PERSO, VINCE IL COMPUTER"
 }
